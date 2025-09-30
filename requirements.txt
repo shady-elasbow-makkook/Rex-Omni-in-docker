@@ -1,0 +1,16 @@
+# Core dependencies
+torch>=2.0.0
+transformers>=4.40.0
+vllm>=0.4.0
+qwen-vl-utils>=0.0.8
+Pillow>=9.0.0
+numpy>=1.21.0
+tqdm>=4.64.0
+
+# Image processing
+opencv-python>=4.5.0
+
+# Optional dependencies for specific features
+# gradio>=4.0.0  # For demo interface
+# matplotlib>=3.5.0  # For visualization
+# psutil>=5.8.0  # For memory monitoring 
