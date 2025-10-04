@@ -58,7 +58,7 @@ def main():
             show_labels=True,
         )
         # Save visualization
-        output_path = "examples/test_images/cafe_visualize.jpg"
+        output_path = "tutorials/detection_example/test_images/cafe_visualize.jpg"
         vis_image.save(output_path)
         print(f"Visualization saved to: {output_path}")
 

@@ -183,7 +183,7 @@ class RexOmniWrapper:
         Perform inference on images for various vision tasks.
 
         Args:
-            images: Input image(s). Can be a single PIL Image or list of PIL Images.
+            image: Input image in PIL.Image format.
             task: Task type. Available options:
                 - "detection": Object detection with bounding boxes
                 - "pointing": Point to objects with coordinates
@@ -191,6 +191,8 @@ class RexOmniWrapper:
                 - "keypoint": Detect keypoints for persons/hands/animals
                 - "ocr_box": Detect and recognize text in bounding boxes
                 - "ocr_polygon": Detect and recognize text in polygons
+                - "gui_grounding": Detect gui element and return in box format
+                - "gui_pointing": Point to gui element and return in point format
             categories: Object categories to detect/locate. Required for most tasks.
                 Examples: ["person", "car"], "dog", ["text"]
             keypoint_type: Type of keypoints for keypoint detection task.
