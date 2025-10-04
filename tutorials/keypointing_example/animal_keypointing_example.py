@@ -55,13 +55,6 @@ def main():
         vis_image.save(output_path)
         print(f"✅ Animal keypointing visualization saved to: {output_path}")
 
-        # Display results
-        print(f"📊 Detected {len(predictions)} animal keypoints")
-        for i, pred in enumerate(predictions):
-            print(
-                f"  Keypoint {i+1}: {pred.get('text', 'N/A')} - Confidence: {pred.get('confidence', 'N/A')}"
-            )
-
     else:
         print(f"❌ Inference failed: {result['error']}")
 

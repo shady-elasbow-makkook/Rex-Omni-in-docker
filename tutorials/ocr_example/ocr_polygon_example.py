@@ -61,18 +61,6 @@ def main():
         output_path = "tutorials/ocr_example/test_images/ocr_polygon_visualize.jpg"
         vis_image.save(output_path)
         print(f"✅ Polygon OCR visualization saved to: {output_path}")
-
-        # Display results
-        print(f"📊 Detected {len(predictions)} text lines")
-        for i, pred in enumerate(predictions):
-            print(
-                f"  Line {i+1}: {pred.get('text', 'N/A')} - Confidence: {pred.get('confidence', 'N/A')}"
-            )
-
-        # Print raw output from Rex-Omni
-        print("\n📝 Raw output from Rex-Omni:")
-        print(results[0]["raw_output"])
-
     else:
         print(f"❌ Inference failed: {result['error']}")
 

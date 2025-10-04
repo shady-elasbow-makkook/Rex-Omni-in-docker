@@ -60,13 +60,6 @@ def main():
         vis_image.save(output_path)
         print(f"✅ Text line-level OCR visualization saved to: {output_path}")
 
-        # Display results
-        print(f"📊 Detected {len(predictions)} text lines")
-        for i, pred in enumerate(predictions):
-            print(
-                f"  Line {i+1}: {pred.get('text', 'N/A')} - Confidence: {pred.get('confidence', 'N/A')}"
-            )
-
     else:
         print(f"❌ Inference failed: {result['error']}")
 

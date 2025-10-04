@@ -59,14 +59,6 @@ def main():
         )
         vis_image.save(output_path)
         print(f"✅ Object pointing visualization saved to: {output_path}")
-
-        # Display results
-        print(f"📊 Detected {len(predictions)} pointing targets")
-        for i, pred in enumerate(predictions):
-            print(
-                f"  Target {i+1}: {pred.get('text', 'N/A')} - Confidence: {pred.get('confidence', 'N/A')}"
-            )
-
     else:
         print(f"❌ Inference failed: {result['error']}")
 

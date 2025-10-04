@@ -60,13 +60,6 @@ def main():
         vis_image.save(output_path)
         print(f"✅ GUI pointing visualization saved to: {output_path}")
 
-        # Display results
-        print(f"📊 Detected {len(predictions)} GUI elements")
-        for i, pred in enumerate(predictions):
-            print(
-                f"  Element {i+1}: {pred.get('text', 'N/A')} - Confidence: {pred.get('confidence', 'N/A')}"
-            )
-
     else:
         print(f"❌ Inference failed: {result['error']}")
 

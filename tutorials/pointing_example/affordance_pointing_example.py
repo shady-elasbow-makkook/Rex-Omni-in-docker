@@ -61,14 +61,6 @@ def main():
         )
         vis_image.save(output_path)
         print(f"✅ Affordance pointing visualization saved to: {output_path}")
-
-        # Display results
-        print(f"📊 Detected {len(predictions)} affordance points")
-        for i, pred in enumerate(predictions):
-            print(
-                f"  Point {i+1}: {pred.get('text', 'N/A')} - Confidence: {pred.get('confidence', 'N/A')}"
-            )
-
     else:
         print(f"❌ Inference failed: {result['error']}")
 
