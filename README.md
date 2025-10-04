@@ -151,16 +151,16 @@ We provide comprehensive tutorials for each supported task. Each tutorial includ
 
 |       Task       |                                                                Applications                                                               |   Demo |                  Python Example                    |                     Notebook                     |
 |:----------------:|:-----------------------------------------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------:|:------------------------------------------------:|:------------------------------------------------:|
-| Object Detection |                               `object detection`                                 | ![img](tutorials/detection_example/test_images/cafe_visualize.jpg)  | [detection_example.py](tutorials/detection_example/detection_example.py)   | [detection_example.ipynb](tutorials/detection_example/_full_notebook.ipynb) |
-|                  |                         `object referring`                      |   | [referring_example.py](tutorials/detection_example/referring_example.py)      |                                                  |
-|                  | `gui grounding` | | [gui_grounding_example.py](tutorials/detection_example/gui_grounding_example.py)  |                                                  |
-|                  |                    `layout grounding`    |          | [layout_grouding_examle.py](tutorials/detection_example/layout_grouding_examle.py) |                                                  |
-| Object Pointing |                               `object pointing`            |                  |   [object_pointing_example.py](tutorials/pointing_example/object_pointing_example.py)   | [object_pointing_example.ipynb](tutorials/pointing_example/_full_notebook.ipynb) |
-|                  |                         `gui pointing`    |                    | [gui_pointing_example.py](tutorials/pointing_example/gui_pointing_example.py)      |                                                  |
-|                  | `affordance pointing` |  | [affordance_pointing_example.py](tutorials/pointing_example/affordance_pointing_example.py)  |                                                  |
-| visual prompting | `visual prompting` |  | [visual_prompt_example.py](tutorials/visual_prompting_example/visual_prompt_example.py) | [visual_prompt_example.ipynb](tutorials/visual_prompting_example/_full_tutorial.ipynb) |
-| OCR | `ocr word box` |  | [ocr_word_box_example.py](tutorials/ocr_example/ocr_word_box_example.py) | [OCR.ipynb](tutorials/ocr_example/_full_tutorial.ipynb) |
-|                  | `ocr textline box` |  | [ocr_textline_box_example.py](tutorials/ocr_example/ocr_textline_box_example.py) | |
-|                  | `ocr polygon` | | [ocr_polygon_example.py](tutorials/ocr_example/ocr_polygon_example.py) |  |
-| Keypointing | `person keypointing` | | [person_keypointing_example.py](tutorials/keypointing_example/person_keypointing_example.py) | [keypointing.ipynb](tutorials/keypointing_example/_full_tutorial.ipynb)|
-|             | `animal keypointing`   |                          |  [animal_keypointing_example.py](tutorials/keypointing_example/animal_keypointing_example.py)                                                |                                                  |
+| Detection |                               `object detection`                                 | ![img](assets/cafe_visualize.jpg)  | [code](tutorials/detection_example/detection_example.py)   | [notebook](tutorials/detection_example/_full_notebook.ipynb) |
+|                  |                         `object referring`                      |   | [code](tutorials/detection_example/referring_example.py)      |                                                  |
+|                  | `gui grounding` | | [code](tutorials/detection_example/gui_grounding_example.py)  |                                                  |
+|                  |                    `layout grounding`    |          | [code](tutorials/detection_example/layout_grouding_examle.py) |                                                  |
+| Pointing |                               `object pointing`            |                  |   [code](tutorials/pointing_example/object_pointing_example.py)   | [notebook](tutorials/pointing_example/_full_notebook.ipynb) |
+|                  |                         `gui pointing`    |                    | [code](tutorials/pointing_example/gui_pointing_example.py)      |                                                  |
+|                  | `affordance pointing` |  | [code](tutorials/pointing_example/affordance_pointing_example.py)  |                                                  |
+| Visual prompting | `visual prompting` |  | [code](tutorials/visual_prompting_example/visual_prompt_example.py) | [notebook](tutorials/visual_prompting_example/_full_tutorial.ipynb) |
+| OCR | `ocr word box` |  | [code](tutorials/ocr_example/ocr_word_box_example.py) | [notebook](tutorials/ocr_example/_full_tutorial.ipynb) |
+|                  | `ocr textline box` |  | [code](tutorials/ocr_example/ocr_textline_box_example.py) | |
+|                  | `ocr polygon` | | [code](tutorials/ocr_example/ocr_polygon_example.py) |  |
+| Keypointing | `person keypointing` | | [code](tutorials/keypointing_example/person_keypointing_example.py) | [notebook](tutorials/keypointing_example/_full_tutorial.ipynb)|
+|             | `animal keypointing`   |                          |  [code](tutorials/keypointing_example/animal_keypointing_example.py)                                                |                                                  |

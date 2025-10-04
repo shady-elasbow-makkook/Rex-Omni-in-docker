@@ -28,7 +28,6 @@ share/python-wheels/
 MANIFEST
 *.tsv
 *.json
-*.jpg
 *.pth
 *.jsonl
 # PyInstaller
