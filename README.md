@@ -1,34 +1,34 @@
 
 <div align=center>
-  <img src="assets/logo.png" width=300 >
+  <img src="assets/logo.png" width=600 >
 </div>
 
-# Detect Anything via Next-Token Prediction
+<h1 align="center">Detect Anything via Next Point Prediction</h1>
 
 <div align=center>
 
 <p align="center">
-  <a href="https://rexthinker.github.io/">
+  <a href="https://rex-omni.github.io/">
     <img
-      src="https://img.shields.io/badge/RexThinker-Website-Red?logo=afdian&logoColor=white&color=blue"
+      src="https://img.shields.io/badge/RexOmni-Website-BADFDB?style=flat-square&logo=deno&logoColor=violet&color=BADFDB"
       alt="RexThinker Website"
     />
   </a>
   <a href="https://arxiv.org/abs/2506.04034">
     <img
-      src="https://img.shields.io/badge/RexThinker-Paper-Red%25red?logo=arxiv&logoColor=red&color=yellow"
+      src="https://img.shields.io/badge/RexOmni-Paper-Red%25red?logo=arxiv&logoColor=red&color=yellow"
       alt="RexThinker Paper on arXiv"
     />
   </a>
-  <a href="https://huggingface.co/IDEA-Research/Rex-Thinker-GRPO-7B">
+  <a href="https://huggingface.co/IDEA-Research/Rex-Omni">
     <img 
-        src="https://img.shields.io/badge/RexThinker-Weight-orange?logo=huggingface&logoColor=yellow" 
+        src="https://img.shields.io/badge/RexOmni-Weight-orange?logo=huggingface&logoColor=yellow" 
         alt="RexThinker weight on Hugging Face"
     />
   </a>
-  <a href="https://huggingface.co/spaces/Mountchicken/Rex-Thinker-Demo">
+  <a href="https://huggingface.co/spaces/Mountchicken/Rex-Omni">
     <img
-      src="https://img.shields.io/badge/RexThinker-Demo-orange?logo=huggingface&logoColor=yellow" 
+      src="https://img.shields.io/badge/RexOmni-Demo-orange?logo=huggingface&logoColor=yellow" 
       alt="RexThinker Demo on Hugging Face"
     />
   </a>
@@ -42,11 +42,13 @@
 <p align="center"><img src="assets/teaser.png" width="95%"></p>
 
 
+# News 🎉
+- [2025-10-14] Rex-Omni is released.
 
 # Table of Contents
 
 
-- [Detect Anything via Next-Token Prediction](#detect-anything-via-next-token-prediction)
+- [News 🎉](#news-)
 - [Table of Contents](#table-of-contents)
   - [1. Installation ⛳️](#1-installation-️)
   - [2. Quick Start: Using Rex-Omni for Detection](#2-quick-start-using-rex-omni-for-detection)
@@ -56,6 +58,8 @@
   - [4. Gradio Demo](#4-gradio-demo)
     - [Quick Start](#quick-start)
     - [Available Options](#available-options)
+  - [5. LICENSE](#5-license)
+  - [6. Citation](#6-citation)
 
 
 ## 1. Installation ⛳️
@@ -196,3 +200,23 @@ CUDA_VISIBLE_DEVICES=0 python demo/gradio_demo.py \
 - `--temperature`: Sampling temperature (default: 0.0)
 - `--top_p`: Nucleus sampling parameter (default: 0.05)
 - `--max_tokens`: Maximum tokens to generate (default: 2048)
+
+## 5. LICENSE
+
+Rex-Omni is licensed under the [IDEA License 1.0](LICENSE), Copyright (c) IDEA. All Rights Reserved.
+
+## 6. Citation
+Rex-Omni comes from a series of prior works. If you’re interested, you can take a look.
+
+- [RexThinker](https://arxiv.org/abs/2506.04034)
+- [RexSeek](https://arxiv.org/abs/2503.08507)
+- [ChatRex](https://arxiv.org/abs/2411.18363)
+- [DINO-X](https://arxiv.org/abs/2411.14347)
+- [Grounidng DINO 1.5](https://arxiv.org/abs/2405.10300)
+- [T-Rex2](https://link.springer.com/chapter/10.1007/978-3-031-73414-4_3)
+- [T-Rex](https://arxiv.org/abs/2311.13596)
+
+
+```text
+
+```
