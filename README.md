@@ -53,6 +53,9 @@
       - [Initialization parameters (RexOmniWrapper)](#initialization-parameters-rexomniwrapper)
       - [Inference parameters (rex.inference)](#inference-parameters-rexinference)
   - [3. Cookbooks](#3-cookbooks)
+  - [4. Gradio Demo](#4-gradio-demo)
+    - [Quick Start](#quick-start)
+    - [Available Options](#available-options)
 
 
 ## 1. Installation ⛳️
@@ -164,3 +167,32 @@ We provide comprehensive tutorials for each supported task. Each tutorial includ
 |                  | `ocr polygon` | ![img](assets/ocr_polygon_visualize.jpg) | [code](tutorials/ocr_example/ocr_polygon_example.py) |       [notebook](tutorials/ocr_example/_full_tutorial.ipynb)                                           |
 | Keypointing | `person keypointing` | ![img](assets/person_keypointing_visualize.jpg) | [code](tutorials/keypointing_example/person_keypointing_example.py) | [notebook](tutorials/keypointing_example/_full_tutorial.ipynb)|
 |             | `animal keypointing`   |     ![img](assets/animal_keypointing_visualize.jpg)                     |  [code](tutorials/keypointing_example/animal_keypointing_example.py)                                                |       [notebook](tutorials/keypointing_example/_full_tutorial.ipynb)                                           |
+| Other | `batch inference` |  | [code](tutorials/other_example/batch_inference.py) ||
+
+## 4. Gradio Demo
+
+![img](assets/gradio.png)
+
+We provide an interactive Gradio demo that allows you to test all Rex-Omni capabilities through a web interface.
+
+### Quick Start
+```bash
+# Launch the demo
+CUDA_VISIBLE_DEVICES=0 python demo/gradio_demo.py --model_path IDEA-Research/Rex-Omni
+
+# With custom settings
+CUDA_VISIBLE_DEVICES=0 python demo/gradio_demo.py \
+    --model_path IDEA-Research/Rex-Omni \
+    --backend vllm \
+    --server_name 0.0.0.0 \
+    --server_port 7890
+```
+
+### Available Options
+- `--model_path`: Model path or HuggingFace repo ID (default: "IDEA-Research/Rex-Omni")
+- `--backend`: Backend to use - "transformers" or "vllm" (default: "transformers")
+- `--server_name`: Server host address (default: "192.168.81.138")
+- `--server_port`: Server port (default: 5211)
+- `--temperature`: Sampling temperature (default: 0.0)
+- `--top_p`: Nucleus sampling parameter (default: 0.05)
+- `--max_tokens`: Maximum tokens to generate (default: 2048)
