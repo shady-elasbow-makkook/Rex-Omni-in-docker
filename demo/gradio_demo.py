@@ -11,6 +11,7 @@ import gradio as gr
 import numpy as np
 from gradio_image_prompter import ImagePrompter
 from PIL import Image
+
 from rex_omni import RexOmniVisualize, RexOmniWrapper, TaskType
 from rex_omni.tasks import KEYPOINT_CONFIGS, TASK_CONFIGS, get_task_config
 
@@ -37,7 +38,7 @@ def parse_args():
     parser.add_argument("--min_pixels", type=int, default=16 * 28 * 28)
     parser.add_argument("--max_pixels", type=int, default=2560 * 28 * 28)
     parser.add_argument("--server_name", type=str, default="192.168.81.138")
-    parser.add_argument("--server_port", type=int, default=5211)
+    parser.add_argument("--server_port", type=int, default=5121)
     args = parser.parse_args()
     return args
 

@@ -2,7 +2,6 @@ matplotlib==3.10.6
 numpy==1.26.4
 Pillow==11.3.0
 qwen_vl_utils==0.0.14
-torch==2.6.0+cu124
 transformers==4.51.3
 vllm==0.8.2
 accelerate==1.10.1

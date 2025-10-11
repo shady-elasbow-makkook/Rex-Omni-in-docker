@@ -55,11 +55,12 @@
       - [Initialization parameters (RexOmniWrapper)](#initialization-parameters-rexomniwrapper)
       - [Inference parameters (rex.inference)](#inference-parameters-rexinference)
   - [3. Cookbooks](#3-cookbooks)
-  - [4. Gradio Demo](#4-gradio-demo)
+  - [4. Applications of Rex-Omni](#4-applications-of-rex-omni)
+  - [5. Gradio Demo](#5-gradio-demo)
     - [Quick Start](#quick-start)
     - [Available Options](#available-options)
-  - [5. LICENSE](#5-license)
-  - [6. Citation](#6-citation)
+  - [6. LICENSE](#6-license)
+  - [7. Citation](#7-citation)
 
 
 ## 1. Installation ⛳️
@@ -158,22 +159,31 @@ We provide comprehensive tutorials for each supported task. Each tutorial includ
 
 |       Task       |                                                                Applications                                                               |   Demo |                  Python Example                    |                     Notebook                     |
 |:----------------:|:-----------------------------------------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------:|:------------------------------------------------:|:------------------------------------------------:|
-| Detection |                               `object detection`                                 | ![img](assets/cafe_visualize.jpg)  | [code](tutorials/detection_example/detection_example.py)   | [notebook](tutorials/detection_example/_full_notebook.ipynb) |
-|                  |                         `object referring`                      | ![img](assets/boys_visualize.jpg)   | [code](tutorials/detection_example/referring_example.py)      |       [notebook](tutorials/detection_example/_full_notebook.ipynb)                                           |
-|                  | `gui grounding` | ![img](assets/gui_visualize.jpg) | [code](tutorials/detection_example/gui_grounding_example.py)  |       [notebook](tutorials/detection_example/_full_notebook.ipynb)                                           |
-|                  |                    `layout grounding`    |  ![img](assets/layout_visualize.jpg)        | [code](tutorials/detection_example/layout_grouding_examle.py) |       [notebook](tutorials/detection_example/_full_notebook.ipynb)                                             |
-| Pointing |                               `object pointing`            |       ![img](assets/object_pointing_visualize.jpg)           |   [code](tutorials/pointing_example/object_pointing_example.py)   | [notebook](tutorials/pointing_example/_full_notebook.ipynb) |
-|                  |                         `gui pointing`    |      ![img](assets/gui_pointing_visualize.jpg)              | [code](tutorials/pointing_example/gui_pointing_example.py)      |       [notebook](tutorials/pointing_example/_full_notebook.ipynb)                                           |
-|                  | `affordance pointing` | ![img](assets/affordance_pointing_visualize.jpg) | [code](tutorials/pointing_example/affordance_pointing_example.py)  |       [notebook](tutorials/pointing_example/_full_notebook.ipynb)                                           |
-| Visual prompting | `visual prompting` | ![img](assets/pigeons_visualize.jpg) | [code](tutorials/visual_prompting_example/visual_prompt_example.py) | [notebook](tutorials/visual_prompting_example/_full_tutorial.ipynb) |
-| OCR | `ocr word box` | ![img](assets/ocr_word_box_visualize.jpg) | [code](tutorials/ocr_example/ocr_word_box_example.py) | [notebook](tutorials/ocr_example/_full_tutorial.ipynb) |
-|                  | `ocr textline box` | ![img](assets/ocr_textline_box_visualize.jpg) | [code](tutorials/ocr_example/ocr_textline_box_example.py) |       [notebook](tutorials/ocr_example/_full_tutorial.ipynb)                                           |
-|                  | `ocr polygon` | ![img](assets/ocr_polygon_visualize.jpg) | [code](tutorials/ocr_example/ocr_polygon_example.py) |       [notebook](tutorials/ocr_example/_full_tutorial.ipynb)                                           |
-| Keypointing | `person keypointing` | ![img](assets/person_keypointing_visualize.jpg) | [code](tutorials/keypointing_example/person_keypointing_example.py) | [notebook](tutorials/keypointing_example/_full_tutorial.ipynb)|
-|             | `animal keypointing`   |     ![img](assets/animal_keypointing_visualize.jpg)                     |  [code](tutorials/keypointing_example/animal_keypointing_example.py)                                                |       [notebook](tutorials/keypointing_example/_full_tutorial.ipynb)                                           |
+| Detection |                               `object detection`                                 | <img src="assets/cafe_visualize.jpg" width="240"/>  | [code](tutorials/detection_example/detection_example.py)   | [notebook](tutorials/detection_example/_full_notebook.ipynb) |
+|                  |                         `object referring`                      | <img src="assets/boys_visualize.jpg" width="240"/>   | [code](tutorials/detection_example/referring_example.py)      |       [notebook](tutorials/detection_example/_full_notebook.ipynb)                                           |
+|                  | `gui grounding` | <img src="assets/gui_visualize.jpg" width="240"/> | [code](tutorials/detection_example/gui_grounding_example.py)  |       [notebook](tutorials/detection_example/_full_notebook.ipynb)                                           |
+|                  |                    `layout grounding`    |  <img src="assets/layout_visualize.jpg" width="240"/>        | [code](tutorials/detection_example/layout_grouding_examle.py) |       [notebook](tutorials/detection_example/_full_notebook.ipynb)                                             |
+| Pointing |                               `object pointing`            |       <img src="assets/object_pointing_visualize.jpg" width="240"/>           |   [code](tutorials/pointing_example/object_pointing_example.py)   | [notebook](tutorials/pointing_example/_full_notebook.ipynb) |
+|                  |                         `gui pointing`    |      <img src="assets/gui_pointing_visualize.jpg" width="240"/>              | [code](tutorials/pointing_example/gui_pointing_example.py)      |       [notebook](tutorials/pointing_example/_full_notebook.ipynb)                                           |
+|                  | `affordance pointing` | <img src="assets/affordance_pointing_visualize.jpg" width="240"/> | [code](tutorials/pointing_example/affordance_pointing_example.py)  |       [notebook](tutorials/pointing_example/_full_notebook.ipynb)                                           |
+| Visual prompting | `visual prompting` | <img src="assets/pigeons_visualize.jpg" width="240"/> | [code](tutorials/visual_prompting_example/visual_prompt_example.py) | [notebook](tutorials/visual_prompting_example/_full_tutorial.ipynb) |
+| OCR | `ocr word box` | <img src="assets/ocr_word_box_visualize.jpg" width="240"/> | [code](tutorials/ocr_example/ocr_word_box_example.py) | [notebook](tutorials/ocr_example/_full_tutorial.ipynb) |
+|                  | `ocr textline box` | <img src="assets/ocr_textline_box_visualize.jpg" width="240"/> | [code](tutorials/ocr_example/ocr_textline_box_example.py) |       [notebook](tutorials/ocr_example/_full_tutorial.ipynb)                                           |
+|                  | `ocr polygon` | <img src="assets/ocr_polygon_visualize.jpg" width="240"/> | [code](tutorials/ocr_example/ocr_polygon_example.py) |       [notebook](tutorials/ocr_example/_full_tutorial.ipynb)                                           |
+| Keypointing | `person keypointing` | <img src="assets/person_keypointing_visualize.jpg" width="240"/> | [code](tutorials/keypointing_example/person_keypointing_example.py) | [notebook](tutorials/keypointing_example/_full_tutorial.ipynb)|
+|             | `animal keypointing`   |     <img src="assets/animal_keypointing_visualize.jpg" width="240"/>                     |  [code](tutorials/keypointing_example/animal_keypointing_example.py)                                                |       [notebook](tutorials/keypointing_example/_full_tutorial.ipynb)                                           |
 | Other | `batch inference` |  | [code](tutorials/other_example/batch_inference.py) ||
 
-## 4. Gradio Demo
+## 4. Applications of Rex-Omni
+
+Rex-Omni's unified detection framework enables seamless integration with other vision models.
+
+| Application | Description | Demo | Documentation |
+|:------------|:------------|:----:|:-------------:|
+| **Rex-Omni + SAM** | Combine language-driven detection with pixel-perfect segmentation. Rex-Omni detects objects → SAM generates precise masks | <img src="assets/rexomni_sam.jpg" width="500"/> | [README](applications/_1_rexomni_sam/README.md) |
+
+
+## 5. Gradio Demo
 
 ![img](assets/gradio.png)
 
@@ -201,11 +211,11 @@ CUDA_VISIBLE_DEVICES=0 python demo/gradio_demo.py \
 - `--top_p`: Nucleus sampling parameter (default: 0.05)
 - `--max_tokens`: Maximum tokens to generate (default: 2048)
 
-## 5. LICENSE
+## 6. LICENSE
 
 Rex-Omni is licensed under the [IDEA License 1.0](LICENSE), Copyright (c) IDEA. All Rights Reserved.
 
-## 6. Citation
+## 7. Citation
 Rex-Omni comes from a series of prior works. If you’re interested, you can take a look.
 
 - [RexThinker](https://arxiv.org/abs/2506.04034)
