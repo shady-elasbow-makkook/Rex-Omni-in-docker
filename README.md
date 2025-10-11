@@ -181,6 +181,7 @@ Rex-Omni's unified detection framework enables seamless integration with other v
 | Application | Description | Demo | Documentation |
 |:------------|:------------|:----:|:-------------:|
 | **Rex-Omni + SAM** | Combine language-driven detection with pixel-perfect segmentation. Rex-Omni detects objects → SAM generates precise masks | <img src="assets/rexomni_sam.jpg" width="500"/> | [README](applications/_1_rexomni_sam/README.md) |
+| **Grounding Data Engine** | Automatically generate phrase grounding annotations from image captions using spaCy and Rex-Omni. | <img src="assets/cafe_grounding.jpg" width="500"/> | [README](applications/_2_automatic_grounding_data_engine/README.md) |
 
 
 ## 5. Gradio Demo
