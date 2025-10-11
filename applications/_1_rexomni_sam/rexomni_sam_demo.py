@@ -393,10 +393,6 @@ def rex_sam_pipeline(
     print(f"\n📊 Step 3: Creating visualizations...")
     visualize_results(image, predictions, masks, save_path=output_path)
 
-    # 7. Save individual masks
-    if save_individual:
-        save_individual_masks(image, masks, predictions)
-
     print("\n" + "=" * 60)
     print("✅ Pipeline completed successfully!")
     print("=" * 60)
