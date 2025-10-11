@@ -37,8 +37,8 @@ def parse_args():
     parser.add_argument("--repetition_penalty", type=float, default=1.05)
     parser.add_argument("--min_pixels", type=int, default=16 * 28 * 28)
     parser.add_argument("--max_pixels", type=int, default=2560 * 28 * 28)
-    parser.add_argument("--server_name", type=str, default="192.168.81.138")
-    parser.add_argument("--server_port", type=int, default=5121)
+    parser.add_argument("--server_name", type=str, default="0.0.0.0")
+    parser.add_argument("--server_port", type=int, default=7890)
     args = parser.parse_args()
     return args
 
@@ -928,6 +928,6 @@ if __name__ == "__main__":
     demo.launch(
         server_name=args.server_name,
         server_port=args.server_port,
-        share=True,
+        share=False,
         debug=True,
     )
