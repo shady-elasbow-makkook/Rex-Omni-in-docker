@@ -38,7 +38,7 @@ def parse_args():
     parser.add_argument("--min_pixels", type=int, default=16 * 28 * 28)
     parser.add_argument("--max_pixels", type=int, default=2560 * 28 * 28)
     parser.add_argument("--server_name", type=str, default="0.0.0.0")
-    parser.add_argument("--server_port", type=int, default=7890)
+    parser.add_argument("--server_port", type=int, default=6121)
     args = parser.parse_args()
     return args
 

@@ -47,7 +47,6 @@
 
 # Table of Contents
 
-
 - [News 🎉](#news-)
 - [Table of Contents](#table-of-contents)
   - [1. Installation ⛳️](#1-installation-️)
@@ -60,6 +59,7 @@
     - [Quick Start](#quick-start)
     - [Available Options](#available-options)
   - [6. LICENSE](#6-license)
+  - [TODO LIST 📝](#todo-list-)
   - [7. Citation](#7-citation)
 
 
@@ -215,6 +215,10 @@ CUDA_VISIBLE_DEVICES=0 python demo/gradio_demo.py \
 ## 6. LICENSE
 
 Rex-Omni is licensed under the [IDEA License 1.0](LICENSE), Copyright (c) IDEA. All Rights Reserved. This model is based on Qwen, which is licensed under the [Qwen RESEARCH LICENSE AGREEMENT](https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct/blob/main/LICENSE), Copyright (c) Alibaba Cloud. All Rights Reserved.
+
+## TODO LIST 📝
+- [ ] Add Evaluation Code
+- [ ] Add Fine-tuning Code
 
 ## 7. Citation
 Rex-Omni comes from a series of prior works. If you’re interested, you can take a look.
