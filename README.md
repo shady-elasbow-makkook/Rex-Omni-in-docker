@@ -14,7 +14,7 @@
       alt="RexThinker Website"
     />
   </a>
-  <a href="https://arxiv.org/abs/2506.04034">
+  <a href="https://arxiv.org/abs/2510.12798">
     <img
       src="https://img.shields.io/badge/RexOmni-Paper-Red%25red?logo=arxiv&logoColor=red&color=yellow"
       alt="RexThinker Paper on arXiv"
@@ -233,5 +233,15 @@ Rex-Omni comes from a series of prior works. If you’re interested, you can tak
 
 
 ```text
+@misc{jiang2025detectpointprediction,
+      title={Detect Anything via Next Point Prediction}, 
+      author={Qing Jiang and Junan Huo and Xingyu Chen and Yuda Xiong and Zhaoyang Zeng and Yihao Chen and Tianhe Ren and Junzhi Yu and Lei Zhang},
+      year={2025},
+      eprint={2510.12798},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2510.12798}, 
+}
+
 
 ```
