@@ -43,7 +43,7 @@
 
 
 # News 🎉
-- [2025-10-14] Rex-Omni is released.
+- [2025-10-15] Rex-Omni is released.
 
 # Table of Contents
 
