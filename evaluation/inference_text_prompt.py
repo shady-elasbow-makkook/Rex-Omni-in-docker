@@ -17,24 +17,24 @@ def get_args():
     parser.add_argument(
         "--model_path",
         type=str,
-        default="work_dirs/det2.0/_1_coco_only_baseline/_1.7_new_special_token/special_token",
+        default="IDEA-Research/Rex-Omni",
     )
     parser.add_argument(
         "--test_jsonl_path",
         type=str,
-        default="mounted_files/det2.0/benchmark/merged_common_longtail_referring_vp_500subset.jsonl",
+        default="Mountchicken/Rex-Omni-Eval/annotations/box_eval/COCO.jsonl",
         help="Path to the test JSONL file containing benchmark data",
     )
     parser.add_argument(
         "--image_root_dir",
         type=str,
-        default="",
+        default="Mountchicken/Rex-Omni-Eval",
         help="Root directory to prepend to image paths. If empty, use image_path as is.",
     )
     parser.add_argument(
         "--save_path",
         type=str,
-        default="work_dirs/det2.0/_1_coco_only_baseline/_1.7_new_special_token/special_token/eval_results/benchmark_eval.jsonl",
+        default="Mountchicken/Rex-Omni-Eval/eval_results/box_eval/COCO/eval.jsonl",
     )
     parser.add_argument(
         "--output_box_format",
@@ -61,7 +61,6 @@ def get_args():
             "point to [OBJ].",  # for point prompt detection
             "Can you detect all the [OBJ] in this image in box format like [x0, y0, x1, y1] and then recognize them?",  # for ocr in box format
             "Can you detect all the [OBJ] in this image in polygon format like [x0, y0, x1, y1, x2, y2 ...] and then recognize them?",  # for ocr in polygon format
-            "Given reference boxes [OBJ] indicating one or more objects, find all objects with the same category in the image and output their bounding boxes in [x0, y0, x1, y1] format.",  # visual prompt evaluation
         ],
         help="Question template with [OBJ] placeholder for prompting",
     )
@@ -577,6 +576,7 @@ if __name__ == "__main__":
         categories = entry["categories"]
         gt = entry["gt"]
         dataset_name = entry["dataset_name"]
+        task_name = entry["task_name"]
 
         # Construct full image path by joining image_root_dir with image_path
         if args.image_root_dir:
@@ -628,6 +628,7 @@ if __name__ == "__main__":
                 "question": question,
                 "dataset_name": dataset_name,
                 "raw_response": output,
+                "task_name": task_name,
             }
 
         except Exception as e:
@@ -639,7 +640,11 @@ if __name__ == "__main__":
                 "question": question,
                 "dataset_name": dataset_name,
                 "raw_response": output,
+                "task_name": task_name,
             }
+
+        if "gt_mask" in gt:
+            prediction["gt"] = gt["gt_mask"]
 
         predictions.append(prediction)
 

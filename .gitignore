@@ -168,3 +168,6 @@ IDEA-Research/
 rex_omni.egg-info/
 website/
 Mountchicken/Rex-Omni-Eval/
+evaluation/batch_eval.py
+evaluation/sbatch_script.sh
+evaluation/sbatch_logs/

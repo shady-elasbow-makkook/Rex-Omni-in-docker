@@ -43,6 +43,7 @@
 
 
 # News 🎉
+- [2025-10-17] Evaluation code and dataset is now [available](evaluation/README.md).
 - [2025-10-15] Rex-Omni is released.
 
 # Table of Contents
@@ -58,9 +59,10 @@
   - [5. Gradio Demo](#5-gradio-demo)
     - [Quick Start](#quick-start)
     - [Available Options](#available-options)
-  - [6. LICENSE](#6-license)
+  - [6. Evaluation](#6-evaluation)
+  - [7. LICENSE](#7-license)
   - [TODO LIST 📝](#todo-list-)
-  - [7. Citation](#7-citation)
+  - [8. Citation](#8-citation)
 
 
 ## 1. Installation ⛳️
@@ -212,15 +214,18 @@ CUDA_VISIBLE_DEVICES=0 python demo/gradio_demo.py \
 - `--top_p`: Nucleus sampling parameter (default: 0.05)
 - `--max_tokens`: Maximum tokens to generate (default: 2048)
 
-## 6. LICENSE
+## 6. Evaluation
+Please refer to [Evaluation](evaluation/README.md) for more details.
+
+## 7. LICENSE
 
 Rex-Omni is licensed under the [IDEA License 1.0](LICENSE), Copyright (c) IDEA. All Rights Reserved. This model is based on Qwen, which is licensed under the [Qwen RESEARCH LICENSE AGREEMENT](https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct/blob/main/LICENSE), Copyright (c) Alibaba Cloud. All Rights Reserved.
 
 ## TODO LIST 📝
-- [ ] Add Evaluation Code
+- [x] Add Evaluation Code
 - [ ] Add Fine-tuning Code
 
-## 7. Citation
+## 8. Citation
 Rex-Omni comes from a series of prior works. If you’re interested, you can take a look.
 
 - [RexThinker](https://arxiv.org/abs/2506.04034)
