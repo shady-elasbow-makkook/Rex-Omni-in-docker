@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  rexomni:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: rexomni:latest
+    container_name: rexomni-demo
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - CUDA_VISIBLE_DEVICES=0
+      # Memory optimization for low VRAM
+      - PYTORCH_CUDA_ALLOC_CONF=max_split_size_mb:128
+    volumes:
+      # Mount the current directory to persist changes
+      - .:/workspace/Rex-Omni
+      # Cache HuggingFace models
+      - ~/.cache/huggingface:/root/.cache/huggingface
+    ports:
+      # For Gradio demo
+      - "7860:7860"
+    stdin_open: true
+    tty: true
+    shm_size: '16gb'
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
