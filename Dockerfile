@@ -71,8 +71,9 @@ RUN pip install --no-cache-dir \
 # Install Rex-Omni package in development mode
 RUN pip install --no-cache-dir -v -e .
 
-# Download model weights from Hugging Face (optional - uncomment if needed)
+# Download model weights from Hugging Face (optional - uncomment for Option 2)
 # This pre-downloads the model to avoid download during runtime on Kaggle
+# WARNING: This will make the Docker image very large (~6-10GB)
 # RUN python -c "from transformers import AutoModelForCausalLM, AutoTokenizer; \
 #     AutoTokenizer.from_pretrained('IDEA-Research/Rex-Omni'); \
 #     AutoModelForCausalLM.from_pretrained('IDEA-Research/Rex-Omni')"
