@@ -4,26 +4,45 @@ This guide will help you set up Rex-Omni on Kaggle using Docker with pre-downloa
 
 ## Step 1: Download Model Weights Locally (One-time)
 
-Run this script on your local machine or in a Kaggle notebook to download the model weights:
+We provide two methods to download the model weights. Choose the one that works best for you:
 
-```python
-from transformers import AutoModelForCausalLM, AutoTokenizer, AutoProcessor
+### Method A: Using the Python Script (Recommended)
 
-# Download model, tokenizer, and processor
-print("Downloading Rex-Omni model weights...")
-model_name = "IDEA-Research/Rex-Omni"
+```bash
+# Install dependencies
+pip install huggingface_hub
 
-tokenizer = AutoTokenizer.from_pretrained(model_name)
-processor = AutoProcessor.from_pretrained(model_name)
-model = AutoModelForCausalLM.from_pretrained(model_name)
-
-print("Download complete!")
-print(f"Model weights saved to: ~/.cache/huggingface/hub/")
+# Download model weights
+python download_weights.py
 ```
 
-The weights will be saved to:
-- Linux/Mac: `~/.cache/huggingface/`
-- Windows: `C:\Users\YourUsername\.cache\huggingface\`
+This will download the model to `./rex-omni-weights/` folder.
+
+### Method B: Using the Bash Script (Alternative)
+
+```bash
+# Make script executable (Linux/Mac)
+chmod +x download_weights_cli.sh
+
+# Download model weights
+./download_weights_cli.sh
+```
+
+This also downloads to `./rex-omni-weights/` folder.
+
+### Method C: Manual Download (In Kaggle Notebook)
+
+If you prefer to download directly in a Kaggle notebook:
+
+```python
+from huggingface_hub import snapshot_download
+
+snapshot_download(
+    repo_id="IDEA-Research/Rex-Omni",
+    local_dir="./rex-omni-weights",
+    local_dir_use_symlinks=False
+)
+```
 
 ## Step 2: Create Kaggle Dataset with Model Weights
 
@@ -39,7 +58,9 @@ pip install kaggle
    - Click "Create New API Token"
    - Save `kaggle.json` to `~/.kaggle/`
 
-3. Create a dataset metadata file `dataset-metadata.json`:
+3. Create a dataset metadata file inside `rex-omni-weights` folder:
+
+Create a file `rex-omni-weights/dataset-metadata.json`:
 ```json
 {
   "title": "Rex-Omni Model Weights",
@@ -50,15 +71,15 @@ pip install kaggle
 
 4. Upload the dataset:
 ```bash
-cd ~/.cache/huggingface
-kaggle datasets create -p . -m dataset-metadata.json
+cd rex-omni-weights
+kaggle datasets create -p .
 ```
 
 ### Option B: Using Kaggle Web Interface
 
 1. Go to https://www.kaggle.com/datasets
 2. Click "New Dataset"
-3. Upload the contents of `~/.cache/huggingface/`
+3. Upload the contents of `./rex-omni-weights/` folder
 4. Name it: **"rex-omni-weights"**
 5. Make it public or private
 6. Click "Create"

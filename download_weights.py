@@ -23,60 +23,54 @@ def main():
     # Model name
     model_name = "IDEA-Research/Rex-Omni"
 
-    # Get cache directory
-    cache_dir = Path.home() / ".cache" / "huggingface"
-    print(f"\nWeights will be saved to: {cache_dir}")
+    # Download to local directory
+    download_dir = Path("./rex-omni-weights")
+    print(f"\nWeights will be saved to: {download_dir.absolute()}")
 
     try:
-        from transformers import AutoModelForCausalLM, AutoTokenizer, AutoProcessor
-        import torch
+        # Use huggingface_hub for more reliable downloading
+        from huggingface_hub import snapshot_download
 
-        print(f"\n[1/3] Downloading tokenizer from {model_name}...")
-        tokenizer = AutoTokenizer.from_pretrained(
-            model_name,
-            trust_remote_code=True
-        )
-        print("✓ Tokenizer downloaded successfully")
-
-        print(f"\n[2/3] Downloading processor from {model_name}...")
-        processor = AutoProcessor.from_pretrained(
-            model_name,
-            trust_remote_code=True
-        )
-        print("✓ Processor downloaded successfully")
-
-        print(f"\n[3/3] Downloading model from {model_name}...")
+        print(f"\nDownloading model from {model_name}...")
         print("(This may take several minutes depending on your connection)")
-        model = AutoModelForCausalLM.from_pretrained(
-            model_name,
-            device_map="cpu",  # Download to CPU to avoid GPU memory issues
-            torch_dtype=torch.float16,
-            trust_remote_code=True
+
+        snapshot_download(
+            repo_id=model_name,
+            local_dir=str(download_dir),
+            local_dir_use_symlinks=False,
+            resume_download=True
         )
+
         print("✓ Model downloaded successfully")
 
         # Calculate total size
-        total_size = sum(f.stat().st_size for f in cache_dir.rglob('*') if f.is_file())
+        total_size = sum(f.stat().st_size for f in download_dir.rglob('*') if f.is_file())
         size_gb = total_size / (1024**3)
 
         print("\n" + "=" * 60)
         print("Download Complete!")
         print("=" * 60)
-        print(f"Location: {cache_dir}")
+        print(f"Location: {download_dir.absolute()}")
         print(f"Total size: {size_gb:.2f} GB")
         print("\nNext steps:")
-        print("1. Create a Kaggle dataset named 'rex-omni-weights'")
-        print(f"2. Upload the contents of: {cache_dir}")
-        print("3. Add the dataset to your Kaggle notebook")
+        print("1. Go to https://www.kaggle.com/datasets")
+        print("2. Click 'New Dataset'")
+        print(f"3. Upload the contents of: {download_dir.absolute()}")
+        print("4. Name it: 'rex-omni-weights'")
+        print("5. Add the dataset to your Kaggle notebook")
         print("\nSee KAGGLE_SETUP.md for detailed instructions.")
 
     except ImportError:
-        print("\n❌ Error: transformers library not found!")
+        print("\n❌ Error: huggingface_hub library not found!")
         print("Please install it first:")
-        print("  pip install transformers torch")
+        print("  pip install huggingface_hub")
+        print("\nAlternatively, use the bash script:")
+        print("  ./download_weights_cli.sh")
         return 1
     except Exception as e:
         print(f"\n❌ Error downloading model: {e}")
+        print("\nTry using the bash script instead:")
+        print("  ./download_weights_cli.sh")
         return 1
 
     return 0
