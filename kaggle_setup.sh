@@ -4,8 +4,9 @@
 curl -fsSL https://get.docker.com -o get-docker.sh
 sh get-docker.sh
 
-# Start Docker service
-service docker start
+# Start Docker daemon in background
+dockerd > /dev/null 2>&1 &
+sleep 5
 
 # Install Docker Compose
 curl -L "https://github.com/docker/compose/releases/download/v2.23.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
