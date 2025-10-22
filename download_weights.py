@@ -26,13 +26,20 @@ def main():
 
     try:
         from transformers import AutoModelForCausalLM, AutoTokenizer, AutoProcessor
+        import torch
 
         print(f"\n[1/3] Downloading tokenizer from {model_name}...")
-        tokenizer = AutoTokenizer.from_pretrained(model_name)
+        tokenizer = AutoTokenizer.from_pretrained(
+            model_name,
+            trust_remote_code=True
+        )
         print("✓ Tokenizer downloaded successfully")
 
         print(f"\n[2/3] Downloading processor from {model_name}...")
-        processor = AutoProcessor.from_pretrained(model_name)
+        processor = AutoProcessor.from_pretrained(
+            model_name,
+            trust_remote_code=True
+        )
         print("✓ Processor downloaded successfully")
 
         print(f"\n[3/3] Downloading model from {model_name}...")
@@ -40,7 +47,8 @@ def main():
         model = AutoModelForCausalLM.from_pretrained(
             model_name,
             device_map="cpu",  # Download to CPU to avoid GPU memory issues
-            torch_dtype="auto"
+            torch_dtype=torch.float16,
+            trust_remote_code=True
         )
         print("✓ Model downloaded successfully")
 
