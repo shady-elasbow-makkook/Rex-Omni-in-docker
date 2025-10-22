@@ -6,24 +6,39 @@ services:
       context: .
       dockerfile: Dockerfile
     image: rexomni:latest
-    container_name: rexomni-demo
+    container_name: rexomni-kaggle
     runtime: nvidia
+
     environment:
       - NVIDIA_VISIBLE_DEVICES=all
       - CUDA_VISIBLE_DEVICES=0
+      - PYTHONUNBUFFERED=1
       # Memory optimization for low VRAM
       - PYTORCH_CUDA_ALLOC_CONF=max_split_size_mb:128
+
     volumes:
-      # Mount the current directory to persist changes
+      # Kaggle directories
+      - /kaggle/input:/kaggle/input:ro    # Input data (read-only)
+      - /kaggle/working:/kaggle/working    # Output directory
+      - /kaggle/temp:/kaggle/temp          # Temp directory
+
+      # Mount the current directory for development
       - .:/workspace/Rex-Omni
-      # Cache HuggingFace models
-      - ~/.cache/huggingface:/root/.cache/huggingface
+
+      # Cache HuggingFace models to Kaggle working directory
+      - /kaggle/working/.cache/huggingface:/root/.cache/huggingface
+
+    # Working directory
+    working_dir: /kaggle/working
+
     ports:
-      # For Gradio demo
+      # For Gradio demo (optional)
       - "7860:7860"
+
     stdin_open: true
     tty: true
     shm_size: '16gb'
+
     deploy:
       resources:
         reservations:
