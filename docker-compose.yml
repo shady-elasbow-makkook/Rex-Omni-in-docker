@@ -25,9 +25,8 @@ services:
       # Mount the current directory for development
       - .:/workspace/Rex-Omni
 
-      # Mount pre-downloaded model weights from Kaggle Dataset
-      # IMPORTANT: Add "rex-omni-weights" dataset to your Kaggle notebook first!
-      - /kaggle/input/rex-omni-weights:/root/.cache/huggingface
+      # Cache models to working directory (downloads on first run)
+      - /kaggle/working/.cache/huggingface:/root/.cache/huggingface
 
     # Working directory
     working_dir: /kaggle/working
