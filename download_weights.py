@@ -5,8 +5,11 @@ Script to download Rex-Omni model weights for Kaggle dataset creation.
 Usage:
     python download_weights.py
 
-The weights will be downloaded to ~/.cache/huggingface/
+The weights will be downloaded to ./rex-omni-weights/
 You can then upload this directory as a Kaggle dataset.
+
+Note: If this script fails due to transformers compatibility issues,
+      use download_weights_cli.sh instead.
 """
 
 import os
