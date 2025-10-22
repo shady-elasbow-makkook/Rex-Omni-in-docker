@@ -77,7 +77,7 @@ pip install -v -e .
 
 Test Installation
 ```bash
-CUDA_VISIBLE_DEVICES=1 python tutorials/detection_example/detection_example.py
+CUDA_VISIBLE_DEVICES=0 python tutorials/detection_example/detection_example.py
 ```
 
 If the installation is successful, you will find a visualization of the detection results at `tutorials/detection_example/test_images/cafe_visualize.jpg`

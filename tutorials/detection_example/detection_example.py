@@ -18,11 +18,13 @@ def main():
     rex_model = RexOmniWrapper(
         model_path=model_path,
         backend="transformers",  # or "vllm" for faster inference
-        max_tokens=4096,
+        max_tokens=2048,  # Reduced from 4096 as per docs recommendation
         temperature=0.0,
         top_p=0.05,
         top_k=1,
         repetition_penalty=1.05,
+        torch_dtype=torch.float16,  # Use float16 instead of bfloat16 to save memory
+        device_map="auto",  # Let it automatically distribute across available devices
     )
 
     # Load imag
